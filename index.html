@@ -1,0 +1,660 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#faf5f1">
+<meta name="description" content="情感观察室：十二个片段，读见友情的分寸，也听见未署名的心事。">
+<meta property="og:title" content="情感观察室｜十二个片段，读见人心的留白。">
+<meta property="og:description" content="十二个片段，观察多年好友的重逢与变化。你会为哪一个细节停留？">
+<meta property="og:type" content="website">
+<title>情感观察室｜友情与个体观察</title>
+<style>
+:root{
+  --ink:#352935; --muted:#806d79; --wine:#85465f; --berry:#a95b77;
+  --rose:#d69aa9; --shell:#faf5f1; --paper:#fffdf9; --mist:#f8eef0;
+  --sage:#6c867b; --line:#eadddf; --shadow:0 20px 55px rgba(87,49,65,.10);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(circle at 3% 5%,#f5e4e8 0,transparent 450px),radial-gradient(circle at 95% 70%,#f7eade 0,transparent 430px),#f6f0eb;color:var(--ink);font-family:ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+button{font:inherit;cursor:pointer} button:disabled{cursor:not-allowed;opacity:.45}
+button:focus-visible{outline:3px solid #d29aaa;outline-offset:3px}
+.app{max-width:920px;margin:auto;padding:20px 18px 42px}
+nav{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.06em}
+.logo-icon{width:39px;height:39px;display:grid;place-items:center;border-radius:13px;color:white;background:linear-gradient(135deg,#844460,#be7a91);font-family:Georgia,serif;font-size:22px}
+.logo small{display:block;font-size:9px;color:#9e8694;letter-spacing:.14em;margin-top:2px}
+.nav-btn{border:1px solid #e1d0d5;border-radius:20px;padding:9px 13px;font-size:12px;background:#ffffffaa;color:#7d5265;font-weight:700}
+.paper{background:var(--paper);border-radius:27px;box-shadow:var(--shadow);border:1px solid #fff;overflow:hidden}
+.screen{display:none}.screen.active{display:block;animation:appear .28s ease both}
+@keyframes appear{from{opacity:.25;transform:translateY(7px)}to{opacity:1;transform:none}}
+.eyebrow{color:#ae6c84;letter-spacing:.18em;font-size:10px;font-weight:850}
+h1,h2,h3{font-family:Georgia,"Songti SC","STSong",serif;font-weight:600}
+h1{font-size:clamp(39px,7vw,66px);line-height:1.19;margin:19px 0}
+h2{font-size:clamp(28px,4.5vw,42px);line-height:1.34;margin:10px 0}
+h3{font-size:23px;margin:7px 0}
+p{line-height:1.9}
+.lead{font-size:15px;color:#715d68;max-width:590px}
+.muted{font-size:13px;color:var(--muted);line-height:1.8}
+.small{font-size:11px;color:#91828b;line-height:1.8}
+.primary{border:0;background:linear-gradient(102deg,#8b4963,#b46880);color:#fff;border-radius:14px;padding:14px 20px;font-weight:800;box-shadow:0 9px 22px #99587128;transition:transform .15s}
+.primary:hover{transform:translateY(-2px)}
+.secondary{background:#fff;border:1px solid #e1ced4;border-radius:14px;padding:13px 17px;color:#895169;font-weight:750}
+.btnline{display:flex;gap:9px;flex-wrap:wrap;margin-top:23px}
+.hero{padding:clamp(24px,5vw,54px);position:relative;overflow:hidden}
+.hero-bg{position:absolute;width:280px;height:280px;background:radial-gradient(circle,#f0d9de 0 35%,transparent 36%);border:1px solid #edd6dc;border-radius:50%;right:-110px;top:-95px;z-index:0}
+.hero>*:not(.hero-bg){position:relative;z-index:1}
+.hero .submark{display:inline-block;margin:20px 0 3px;padding:7px 11px;background:#f9eaf0;border-radius:99px;color:#98526c;font-size:11px;font-weight:800}
+.hero-quote{margin:22px 0;padding:16px 18px;background:#f9f0ed;border-left:3px solid #b66e83;border-radius:0 12px 12px 0;color:#7e5e6e;font-family:Georgia,"Songti SC",serif;font-size:17px;line-height:1.8;max-width:570px}
+.divider{height:1px;background:#eadfe0;margin:23px 0}
+.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-top:25px}
+.quick .stat{padding:15px;background:#faf1f1;border-radius:13px}
+.stat b{display:block;font-size:23px;color:#97516d}
+.stat span{font-size:11px;color:#8b7580}
+.section{padding:clamp(22px,4vw,38px)}
+.topline{display:flex;align-items:start;justify-content:space-between;gap:14px}
+.stepbadge{white-space:nowrap;background:#f7e8ed;border-radius:99px;padding:7px 12px;font-size:12px;color:#92536b;font-weight:800}
+.track{height:7px;background:#f0e3e7;border-radius:99px;overflow:hidden;margin:17px 0 24px}
+.track i{display:block;height:100%;width:0%;background:linear-gradient(90deg,#a65b77,#df9fb0);border-radius:99px;transition:width .25s}
+.episode{color:#9e6076;font-weight:800;font-size:11px;letter-spacing:.14em}
+.scene{padding:clamp(21px,4vw,34px);border-radius:20px;background:linear-gradient(145deg,#faf5f0,#fffbf8);border:1px solid #ebdddd;margin:16px 0 14px}
+.scene .scene-no{font-size:10px;color:#a57286;letter-spacing:.18em;font-weight:850}
+.scene h3{font-size:clamp(23px,3.8vw,30px);color:#753d56;margin:11px 0 13px}
+.scene-text{font-family:Georgia,"Songti SC","STSong",serif;font-size:clamp(16px,2.5vw,19px);line-height:2.05;color:#5b4752;white-space:pre-line;margin:0}
+.question-label{font-size:11px;color:#ad6480;letter-spacing:.1em;font-weight:850;margin:21px 0 6px}
+.question-label.self{color:var(--sage)}
+.qtitle{font-weight:800;font-size:17px;line-height:1.65;margin-bottom:15px}
+.options{display:grid;gap:10px}
+.option{display:flex;align-items:start;gap:12px;background:#fff;border:1px solid #e8dce1;border-radius:15px;text-align:left;padding:15px 15px;color:#584651;line-height:1.72;transition:.14s;font-size:14px}
+.option:hover{border-color:#c98b9d;background:#fff8fa}
+.option[aria-pressed="true"]{border-color:#b1627d;background:#f9eaf0;box-shadow:inset 0 0 0 1px #b1627d;color:#783d58}
+.option.self[aria-pressed="true"]{border-color:var(--sage);background:#f0f4ef;box-shadow:inset 0 0 0 1px var(--sage);color:#456d5c}
+.letter{width:26px;height:26px;min-width:26px;border-radius:50%;display:grid;place-items:center;background:#f4e7ec;color:#a26078;font-weight:850;font-size:11px;margin-top:1px}
+.option.self[aria-pressed="true"] .letter{background:#ddebe0;color:#4d725f}
+.interpretation{display:none;margin:16px 0 4px;padding:15px 17px;background:#f8eff2;border-left:3px solid #b76d86;border-radius:0 12px 12px 0;color:#825769;font-family:Georgia,"Songti SC",serif;font-size:15px;line-height:1.8}
+.interpretation.visible{display:block}
+.clue{border:1px dashed #d6aab9;border-radius:16px;background:#fff9f8;padding:16px;margin:19px 0 3px}
+.clue p{margin:8px 0 0;font-size:13px;color:#75636d;line-height:1.85}
+.clue-btn{border:1px solid #d6acba;background:#fff;border-radius:11px;padding:9px 14px;color:#91516a;font-weight:800;font-size:12px}
+.actions{display:flex;align-items:center;justify-content:space-between;gap:11px;margin-top:25px}
+.actions .primary{min-width:137px}
+.actions .secondary{padding:13px 15px}
+.page-number{color:#9a818d;font-size:12px;white-space:nowrap}
+.footnote{font-size:11px;color:#96858d;margin:20px 0 0;line-height:1.8}
+.result-head{background:linear-gradient(120deg,#783a55,#a75c77);color:white;border-radius:21px;padding:28px;margin-top:15px}
+.result-head .eyebrow{color:#e9bdce}
+.result-head h2{color:white;font-size:clamp(29px,5vw,42px)}
+.result-head p{color:#f5dfe7;margin:5px 0;font-size:13px}
+.result-head strong{font-size:27px}
+.report-block{background:white;border:1px solid #eddeE2;border-radius:18px;padding:21px;margin-top:13px}
+.report-block .label{font-size:10px;color:#ad6b83;letter-spacing:.14em;font-weight:850}
+.report-block h3{color:#854b65}
+.report-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.meter{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px;font-size:12px;color:#756675}
+.fill{height:7px;background:#f4e8ec;border-radius:99px;overflow:hidden;margin-top:7px}
+.fill i{display:block;height:100%;background:linear-gradient(90deg,#a76079,#df9faf);border-radius:99px}
+.matchline{padding:11px 0;border-top:1px solid #eee2e6;font-size:13px;line-height:1.8}
+.matchline b{color:#824c64}
+.result-quote{font-family:Georgia,"Songti SC",serif;color:#935b72;font-size:20px;line-height:1.9}
+.sharegrid{display:grid;grid-template-columns:minmax(240px,330px) 1fr;gap:25px;align-items:start;margin-top:20px}
+.poster{max-width:330px;width:100%;border-radius:17px;display:block;box-shadow:0 15px 32px #81516d29}
+.sharecontrols{display:flex;flex-direction:column;gap:12px}
+.sharecontrols p{font-size:13px;color:#7c6d76}
+.linkbox{background:#f9eff2;padding:13px;border-radius:12px;border:1px solid #eedee4;font-size:12px;line-height:1.7;color:#87546c;overflow-wrap:anywhere}
+.toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,15px);background:#4c3443;color:white;padding:11px 19px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;transition:.2s;z-index:100;text-align:center;max-width:90vw}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+footer{font-size:11px;color:#9e8c96;line-height:1.85;text-align:center;padding:23px 8px}
+@media(max-width:650px){.report-cols,.sharegrid{grid-template-columns:1fr}.quick .stat{padding:12px}.hero{padding:26px 22px}.section{padding:22px 18px}.option{font-size:14px}.sharegrid{gap:13px}.poster{margin:auto}}
+@media(max-width:390px){.app{padding:14px 10px 25px}.actions .primary{min-width:unset;padding:12px}.actions .secondary{padding:12px}.scene{padding:19px}.hero h1{font-size:38px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+
+/* 微信分享引导；页面不会尝试强行调起微信应用 */
+.wx-overlay[hidden], .wx-inline[hidden]{display:none!important}
+.wx-overlay{position:fixed;z-index:9999;inset:0;background:rgba(41,31,41,.82);color:#fff;display:flex;align-items:flex-start;justify-content:center;padding:clamp(22px,6vw,50px)}
+.wx-message{width:min(100%,390px);margin-top:75px;padding:23px;border:1px solid rgba(255,255,255,.28);border-radius:20px;background:#574052;box-shadow:0 16px 46px rgba(0,0,0,.25)}
+.wx-message h3{font-family:inherit;color:white;margin:8px 0 12px}
+.wx-message p{font-size:14px;line-height:1.85;color:#f7ebf1}
+.wx-arrow{position:absolute;right:25px;top:12px;font-size:38px;transform:rotate(-20deg)}
+.wx-action{background:#fff;border:0;border-radius:12px;color:#79485e;font-weight:800;padding:12px 16px;margin-top:10px}
+.wx-inline{background:#f3e7ed;border:1px solid #e8cdd8;border-radius:13px;padding:12px 14px;color:#805068;font-size:13px;line-height:1.85}
+.share-explain{font-size:12px;line-height:1.8;color:#7f6b78}
+
+/* V4 mobile: one question per viewport, no vertical scrolling during play */
+.clue-overlay[hidden]{display:none!important}
+.clue-overlay{position:fixed;z-index:9998;inset:0;background:rgba(45,35,44,.66);display:grid;place-items:center;padding:18px}
+.clue-modal{width:min(92vw,390px);background:#fffdf9;border-radius:20px;padding:22px;box-shadow:0 18px 50px rgba(0,0,0,.2)}
+.clue-modal h3{margin:7px 0 10px}
+.clue-modal p{font-size:14px;line-height:1.8;color:#66535f}
+.compact-clue{padding:0;border:0;background:transparent;margin:8px 0 0}
+body.play-mode #play .footnote{display:none}
+
+@media(max-width:650px){
+  body.play-mode{overflow:hidden}
+  body.play-mode .app{height:100dvh;max-height:100dvh;padding:7px 9px 8px;display:flex;flex-direction:column}
+  body.play-mode nav{height:36px;min-height:36px;margin:0 0 5px}
+  body.play-mode .logo-icon{width:31px;height:31px;border-radius:10px;font-size:17px}
+  body.play-mode .logo{font-size:14px;gap:7px}
+  body.play-mode .logo small{display:none}
+  body.play-mode .nav-btn{font-size:11px;padding:6px 9px}
+  body.play-mode main{min-height:0;flex:1}
+  body.play-mode #play{height:100%;min-height:0}
+  body.play-mode #play .paper.section{
+    height:100%;min-height:0;overflow:hidden;border-radius:18px;padding:10px 12px;
+    display:flex;flex-direction:column
+  }
+  body.play-mode #play .topline{min-height:24px}
+  body.play-mode #play .stepbadge{font-size:10px;padding:5px 9px}
+  body.play-mode #play .track{height:5px;margin:5px 0 7px}
+  body.play-mode #play .scene{padding:9px 11px;border-radius:13px;margin:3px 0 6px;flex:0 0 auto}
+  body.play-mode #play .scene-no{font-size:8px}
+  body.play-mode #play .scene-text{font-size:clamp(12px,3.25vw,13.2px);line-height:1.48}
+  body.play-mode #play .question-label{font-size:9px;margin:4px 0 2px}
+  body.play-mode #play .qtitle{font-size:13px;line-height:1.38;margin-bottom:5px}
+  body.play-mode #play .options{gap:5px;min-height:0}
+  body.play-mode #play .option{padding:7px 9px;gap:7px;border-radius:10px;font-size:clamp(10.5px,2.85vw,11.7px);line-height:1.35}
+  body.play-mode #play .letter{width:20px;height:20px;min-width:20px;font-size:9px}
+  body.play-mode #play .interpretation{display:none!important}
+  body.play-mode #play .compact-clue{margin:5px 0 0;min-height:28px}
+  body.play-mode #play .clue-btn{font-size:10.5px;padding:6px 9px}
+  body.play-mode #play .actions{margin-top:auto;padding-top:6px;gap:6px}
+  body.play-mode #play .actions .primary,body.play-mode #play .actions .secondary{font-size:11px;padding:8px 10px;border-radius:10px}
+  body.play-mode #play .page-number{font-size:10px}
+  body.play-mode footer{display:none}
+}
+@media(max-width:380px) and (max-height:760px){
+  body.play-mode #play .scene{padding:7px 9px}
+  body.play-mode #play .scene-text{font-size:11.3px;line-height:1.4}
+  body.play-mode #play .qtitle{font-size:12px}
+  body.play-mode #play .option{padding:6px 8px;font-size:10.2px;line-height:1.3}
+  body.play-mode #play .compact-clue{margin-top:3px}
+}
+
+
+/* 结果页：更适合阅读短篇关系随笔 */
+.insight-item{border-top:1px solid #eee2e7;padding:12px 0 1px}
+.insight-item:first-of-type{border-top:0}
+.insight-item b{font-size:12px;color:#89506a}
+.insight-item p{margin:5px 0 9px!important;font-size:13px!important;line-height:1.85}
+.report-block .matchline div{color:#635460;margin-top:5px}
+.report-block .result-quote{font-size:clamp(18px,3vw,21px)}
+
+/* V6: individual portraits and a reflective report */
+.portrait-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 8px}
+.portrait-note{border:1px solid #eddee4;background:linear-gradient(135deg,#fffdfb,#fbf4f4);border-radius:14px;padding:15px}
+.portrait-head{display:flex;gap:9px;align-items:center;margin-bottom:10px}
+.portrait-head b{font-size:13px;color:#7f5265}
+.portrait-initial{display:grid;place-items:center;min-width:32px;height:32px;border-radius:10px;background:#f2dfe6;color:#91536c;font-family:Georgia,serif;font-size:17px}
+.portrait-note p{font-size:13px;color:#645560;line-height:1.9;margin:0}
+@media(max-width:650px){
+ .portrait-pair{grid-template-columns:1fr}
+ .portrait-note{padding:13px}
+}
+/* Compact diary layout on mobile. Keep each story and all four choices visible. */
+@media(max-width:650px){
+ body.play-mode #play .scene-text{font-size:clamp(11.5px,3.15vw,13px);line-height:1.43}
+ body.play-mode #play .option{font-size:clamp(10px,2.82vw,11.7px);line-height:1.31;padding:6px 9px}
+ body.play-mode #play .qtitle{font-size:12.6px;line-height:1.34}
+ body.play-mode #play .scene{padding:8px 10px}
+ body.play-mode #play .option-grid{gap:5px}
+}
+@media(max-width:380px) and (max-height:700px){
+ body.play-mode #play .scene-text{font-size:10.9px;line-height:1.37}
+ body.play-mode #play .option{font-size:10px;line-height:1.28;padding:5px 8px}
+ body.play-mode #play .options{gap:4px}
+ body.play-mode #play .scene{padding:6px 8px;margin:2px 0 4px}
+ body.play-mode #play .qtitle{font-size:11.7px;margin-bottom:3px}
+ body.play-mode #play .track{margin:3px 0 5px}
+ body.play-mode #play .actions{padding-top:4px}
+}
+
+
+@media(max-width:650px) and (min-height:780px) and (min-width:365px){
+ body.play-mode #play .scene{padding:13px 15px;margin:7px 0 10px}
+ body.play-mode #play .scene-text{font-size:clamp(14px,3.7vw,15px);line-height:1.55}
+ body.play-mode #play .question-label{font-size:10.5px;margin:8px 0 5px}
+ body.play-mode #play .qtitle{font-size:15.5px;line-height:1.48;margin-bottom:11px}
+ body.play-mode #play .options{gap:8px}
+ body.play-mode #play .option{font-size:clamp(12.8px,3.45vw,14px);line-height:1.43;padding:10px 10px}
+ body.play-mode #play .letter{width:23px;height:23px;min-width:23px;font-size:10px}
+ body.play-mode #play .actions{padding-top:12px}
+}
+
+/* 叙事前情：以档案纸张的质感承接人物关系，不重复出现说明卡 */
+.prologue{position:relative;margin:19px 0 16px;padding:19px 21px 17px;
+  border:1px solid #e9d6d9;background:linear-gradient(135deg,#fff8f5,#faf0ed);
+  border-radius:17px}
+.prologue:before{content:"";position:absolute;top:19px;left:0;width:3px;height:40px;
+  background:#be8396;border-radius:0 3px 3px 0}
+.prologue-label{font-size:10px;letter-spacing:.15em;font-weight:850;color:#9d6178}
+.prologue h2{font-size:clamp(19px,3.5vw,24px);color:#72475a;margin:10px 0 11px;line-height:1.48}
+.prologue p{margin:8px 0;color:#65515d;font-size:13px;line-height:1.86}
+.prologue p+p{margin-top:9px}
+@media(max-width:650px){
+  .prologue{margin:15px 0 13px;padding:15px 16px 14px}
+  .prologue h2{font-size:19px}
+  .prologue p{font-size:12px;line-height:1.8}
+}
+
+@media(min-width:651px) and (max-width:900px){
+ body.play-mode footer{display:none}
+}
+
+/* The concluding verse receives editorial spacing, not an attention-grabbing box. */
+.final-verdict{border-top:2px solid #bc8298!important;background:linear-gradient(160deg,#fffdfb,#fcf7f4)!important}
+.final-verdict h3{font-size:clamp(23px,3.5vw,30px);margin:12px 0}
+.final-verdict .result-quote{font-size:clamp(19px,3vw,23px)!important;line-height:2.0}
+ 
+@media(max-width:360px) and (max-height:660px){
+ body.play-mode #play .scene-text{font-size:10.7px;line-height:1.36}
+ body.play-mode #play .option{font-size:9.8px;line-height:1.28;padding:5px 8px}
+ body.play-mode #play .options{gap:4px}
+ body.play-mode #play .qtitle{font-size:11.7px;line-height:1.3}
+ body.play-mode #play .scene{padding:7px 9px}
+ body.play-mode #play .question-label{margin:2px 0}
+}
+</style>
+</head>
+<body>
+<div class="app">
+<nav>
+  <div class="logo"><div class="logo-icon">◌</div><div>情感观察室<small>RELATIONSHIP OBSERVATORY · VOL. 001</small></div></div>
+  <div><button class="nav-btn" id="homeBtn">首页</button> <button class="nav-btn" id="resetBtn">重玩</button></div>
+</nav>
+<main>
+  <section id="home" class="screen active">
+    <div class="paper hero">
+      <div class="hero-bg"></div>
+      <div class="eyebrow">FILE 001 · MORE THAN ONE STORY</div>
+      <h1>情感观察室</h1>
+      <div class="submark">十二个片段，两个完整的人。</div>
+      <section class="prologue" aria-labelledby="prologueTitle">
+        <div class="prologue-label">PREVIOUSLY · 前情提要</div>
+        <h2 id="prologueTitle">重逢之前，她们曾是很好的朋友。</h2>
+        <p>阿晚与小满是相识多年的好友，曾一起为旧城收集声音。一个认真到近乎固执，一个总肯为没说完的话多等一会儿。后来，她们走向不同城市；一段未经确认便公开的访谈，又让彼此的信任生了裂缝。误会迟迟未解，联系也慢慢断了。</p>
+        <p>多年后，旧馆迁址，她们因工作偶然重逢。熟悉还在，伤口也在；分开的岁月里，她们也各自有了完整的生活。</p>
+      </section>
+      <p class="lead"><b>你是观察室的一位嘉宾。</b> 接下来，从十二个片段里回看她们的相识、失和与重逢。面对那些言语、沉默与选择，你会读出怎样的牵挂、分寸与未尽之言？那些判断，又会照见怎样的你？</p>
+      <div class="btnline"><button class="primary" id="startBtn">开始观察 →</button></div>
+      <div class="hero-quote">“她们不只是彼此故事里的人，也各自拥有辽阔的生活。”</div>
+      <div class="quick">
+        <div class="stat"><b>12</b><span>道关系观察题</span></div>
+        <div class="stat"><b>6</b><span>种观察风格</span></div>
+        <div class="stat"><b>1</b><span>份多面观察报告</span></div>
+      </div>
+      <p class="footnote">阿晚与小满是原创虚构人物。这里记录友情里的靠近、距离与心事，也给每一种阅读留下余地。</p>
+    </div></section>
+
+  <section id="play" class="screen">
+    <div class="paper section">
+      <div class="topline" style="justify-content:flex-end">
+        <span class="stepbadge" id="counter"></span>
+      </div>
+      <div class="track"><i id="progress"></i></div>
+      <div class="scene">
+        <div class="scene-no" id="sceneNo" aria-hidden="true"></div>
+        <p class="scene-text" id="sceneText"></p>
+      </div>
+      <div class="question-label" id="qLabel"></div>
+      <div class="qtitle" id="qTitle"></div>
+      <div id="options" class="options"></div>
+      <div id="interpretation" class="interpretation" aria-live="polite"></div>
+      <div id="clueSlot"></div>
+      <div class="actions">
+        <button class="secondary" id="prevBtn">← 上一题</button>
+        <div class="page-number" id="pageNo"></div>
+        <button class="primary" id="nextBtn">下一条线索 →</button>
+      </div>
+      <p class="footnote">故事仍在继续，解读也始终有余地。每次选择，都是你在故事里停驻的一束目光。</p>
+    </div>
+  </section>
+
+  <section id="result" class="screen">
+    <div class="paper section">
+      <div class="eyebrow">THE OBSERVER REPORT</div>
+      <h2>从她们的故事里，读见你的心。</h2>
+      <div id="report"></div>
+      <div class="btnline"><button class="primary" id="sharePageBtn">生成我的独立结果卡 →</button><button class="secondary" id="resultRestartBtn">重新观察</button></div>
+    </div>
+  </section>
+
+  <section id="share" class="screen">
+    <div class="paper section">
+      <div class="eyebrow">YOUR POSTCARD</div>
+      <h2>把这份观察，寄给另一个人。</h2>
+      <p class="muted">你的情感判词会化作一张独立卡片。把图像珍藏，也把故事寄给另一位愿意细读的人。</p>
+      <div class="sharegrid">
+        <div><img id="posterPreview" alt="观察室独立结果卡" class="poster"></div>
+        <div class="sharecontrols">
+          <button class="primary" id="shareBtn">↗ 分享测评邀请</button>
+          <button class="secondary" id="savePosterBtn">↓ 保存独立 PNG 结果卡</button>
+          <button class="secondary" id="copyLinkBtn">复制好友直达测评链接</button>
+          <div class="wx-inline" id="wxInline" hidden>你正在微信内浏览：点击「分享测评邀请」会提示你使用微信右上角的 ··· 菜单。若要保证好友直接进入第 1 题，建议复制下方含 ?play=1 的直达链接发给朋友。</div>
+          <div class="linkbox" id="linkbox"></div>
+          <p class="share-explain" id="shareExplain">好友通过链接进入测评；结果卡可以保存为独立图片，留在相册或分享给朋友。系统分享菜单依据设备与浏览器显示可用的 App。</p>
+          <button class="secondary" id="backResultBtn">← 返回完整报告</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>情感观察室 · 关于友情、界限与完整自我的关系观察小游戏<br>角色与情节均为虚构。观察结果是一种文学化的阅读画像，留给真实的你继续书写。</footer>
+</div>
+<canvas id="posterCanvas" width="1080" height="1440" hidden></canvas>
+
+
+<div id="clueOverlay" class="clue-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="clueModalTitle">
+  <div class="clue-modal">
+    <div class="eyebrow">补充线索</div>
+    <h3 id="clueModalTitle">卡片背面</h3>
+    <p id="clueModalText"></p>
+    <button type="button" class="primary" id="clueCloseBtn">看完了</button>
+  </div>
+</div>
+<div id="wxOverlay" class="wx-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="wxGuideTitle">
+  <div class="wx-arrow" aria-hidden="true">↗</div>
+  <div class="wx-message">
+    <div style="font-size:11px;letter-spacing:.16em;color:#e9cbd7;font-weight:800">WECHAT SHARE</div>
+    <h3 id="wxGuideTitle">在微信内分享给朋友</h3>
+    <p>① 点击右上角的 <b>···</b><br>② 选择「转发给朋友」或「分享到朋友圈」<br>③ 选择聊天对象，确认发送</p>
+    <p>注意：顶部菜单分享的链接可能是当前页面地址；如果希望好友<b>直接从第一题开始</b>，请先用「复制好友直达测评链接」，再粘贴发送到聊天。</p>
+    <button type="button" class="wx-action" id="wxCloseBtn">我知道了</button>
+  </div>
+</div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+/* This file intentionally has no references to identifiable real people.
+   9 items: friendship observations only; the player stays in the observer role.
+   Every answer is a valid reading, not a keyed moral judgment. */
+const lenses={"security":{"title":"安稳陪伴型","subtitle":"在日常的回音里，辨认长久","quote":"灯火有时隔着城，也照得见归途。","strength":"你相信反复兑现的关心。约定被记住、消息有回音、失意时有人出现，这些寻常小事在你眼里有着沉甸甸的分量。","blind":"时间会改变陪伴的形状。忙碌的季节、稀疏的来信、偶尔的沉默，也值得放进同一幅生活的画里。","method":"你先看一个人如何在时间里出现：谁守住约定，谁记得旧事，谁在岁月的转弯处仍愿伸手。","counter":"当一个寡言的朋友总在紧要时刻出现，你会怎样重新衡量那些安静的日子？","question":"当生活把两个人送往不同方向，还有什么能让你认出一段深厚的友情？","identity":"为关系留灯的人","mirror":"你心里有一扇常亮的窗，愿意让重要的人辨认归途。你也有自己的书桌、远行和漫长的夜；这份温柔在向外照亮时，同样照见了你。","evidence":"你倾向于从日常回应和长期兑现里辨认情感的重量。","match":"坦诚沟通型","complement":"他们替沉默寻找语言，你替语言寻找落脚的日常；一个负责开门，一个负责把灯留下。","friction":"你在意联系的频率，对方也许更在意表达的质量。把彼此期待说清，能让等待有更柔软的尺度。","verdict":"你把珍惜写在许多平凡的日子里。街灯熄灭以前，你总想替人留下一点亮光；而你自己，也值得有人记得归来的方向。","postcard":"愿你等候的灯，也有人替你点亮。"},"freedom":{"title":"边界自在型","subtitle":"在靠近与远行之间，守住自由","quote":"靠近时有光，转身时有风。","strength":"你珍视独立生长的空间。你的亲密观带着宽阔的呼吸感：两个人可以共享一段路，也可以继续拥有自己的风景。","blind":"留白也会被误读。对于珍视你的人，一句清楚的惦念，往往能让自由与安心同时生长。","method":"你先看关系中的选择权：谁能坦然答应，谁能从容拒绝，谁的生活仍保有自己的方向。","counter":"当朋友一再主动靠近，她究竟在索取承诺，还是用熟悉的方式表达珍惜？","question":"你愿意为谁敞开一扇门，又愿意把怎样的风留给自己？","identity":"懂得留白的人","mirror":"你为人留位置，也为自己留天地。你知道亲近最动人的一面，是两棵树各有根系，却能在风起时听见彼此的枝叶。","evidence":"你很敏锐地察觉邀请与要求之间细微的分寸。","match":"共情照顾型","complement":"他们听见人心里未说完的半句话，你听见一个人需要独处的脚步；相遇在恰当的距离，彼此都舒展。","friction":"你习惯以空间表达信任，对方或许以关怀确认连接。说出需要，能让两种温柔找到共同语言。","verdict":"你把自由当作一种深情的礼貌。走近一个人时，你仍记得她有自己的天空；转身远行时，你的心也有值得回望的地方。","postcard":"为彼此留风，也为自己留岸。"},"detail":{"title":"细节感知型","subtitle":"从时光的细纹里，读出牵挂","quote":"一粒微光落进旧事，时间便有了秘密的纹路。","strength":"你善于看见被匆忙略过的动作：一句熟悉的口头禅、一张留在包里的照片、隔了多年仍记得的习惯。","blind":"一个瞬间往往拥有几种来历。把片段放回前因后果，细节的光才更接近它真实的颜色。","method":"你观察谁记住了什么，谁的目光短暂停留，谁在某个寻常动作里泄露了一点特别的在意。","counter":"当相同的目光出现在另一段背景里，你会为它写出怎样的新注脚？","question":"你最想被人记住的，是一次盛大的告白，还是某个平凡日子里的小小习惯？","identity":"替细节保存温度的人","mirror":"你像一位耐心的阅读者，肯为别人匆匆翻过的一页停留。敏感在你身上是一种天赋，也是一份需要温柔安放的认真。","evidence":"你更容易从记忆、动作与语气的细微变化里读到关系的温度。","match":"长线同行型","complement":"他们把一个瞬间放回漫长岁月，你让漫长岁月重新拥有具体的面容；彼此交换镜头，故事会长出纵深。","friction":"你更信任微小的信号，对方倾向于观察后续行动。两种尺度相互印证，能让直觉更稳妥。","verdict":"你总能听见日常深处轻微的回响。有人路过一生，记得的只是天气；你却会记得，风起那天谁替谁按住过一张纸。","postcard":"愿你的细腻，终有温柔的回音。"},"growth":{"title":"长线同行型","subtitle":"让岁月成为理解，而非判决","quote":"两棵树各自向上，也曾共同遮过一场雨。","strength":"你习惯把关系放进更长的时间里理解，关注一个人的改变、长期投入，以及冲突之后仍在生长的可能。","blind":"时间有自己的岔路。深厚的旧情可以延续，也可以转化为一种安静的祝福；每种选择都有各自的重量。","method":"你先追问人物经历了什么：从旧日到今日，她们学会了什么，又怎样面对新的生活。","counter":"当两个人终于走向不同方向，一段关系的价值会以怎样的方式继续存在？","question":"若重逢让你认出彼此的改变，你会想念从前的她，还是好奇今天的她？","identity":"相信人仍会生长的人","mirror":"你读懂变化，也愿意把目光投向明天。你身上有向前的力量，既珍惜来路，也肯为新的风景重新出发。","evidence":"你倾向于把短暂的善意放进更长的行为和人生时间线中观察。","match":"细节感知型","complement":"他们收藏一个瞬间的微光，你为微光找到岁月的方向；两种观察相遇，过去与未来便有了联系。","friction":"你容易先问关系将走向何处，对方想多看一眼当下的心绪。时间与瞬间值得被同样认真地倾听。","verdict":"你相信人会变化，也相信变化有自己的美。旧路尽头，新的枝叶正在抽芽；你拥有回望的温柔，也拥有继续生长的勇气。","postcard":"故事仍在生长，你也是。"},"care":{"title":"共情照顾型","subtitle":"在言语落下之后，听见情绪","quote":"你听得见话音散去后，仍留在房间里的难过。","strength":"你愿意先辨认情绪的来处：愤怒里的委屈，沉默里的迟疑，体面背后那份需要被看见的疲惫。","blind":"理解他人的感受，也需要留意事实与责任。两个人都值得被听见，清晰的边界会让共情更加有力量。","method":"你先听一个人的声音怎样颤动，怎样停顿，怎样绕过真正想说的话。","counter":"当两个人都有伤口，你会怎样在倾听之间，为事实留下位置？","question":"你最想让一个难过的人知道什么？又希望有人怎样照顾你的难过？","identity":"允许情绪有层次的人","mirror":"你的温柔有辨认阴影的能力。你愿意听别人说完漫长的苦楚，也愿意承认自己的脆弱；柔软与清醒可以并肩走在你身上。","evidence":"你倾向于从感受的顺序和情绪的来历理解人物。","match":"安稳陪伴型","complement":"你照见心事，他们在日常里回应心事；有了倾听，也有了长久而具体的照料。","friction":"你期待情绪先被接住，对方也许急于提供方案。说出当下更需要陪伴还是行动，会让善意落在合适的地方。","verdict":"你总能在众人的喧哗之外，听见一个人声音里的细雨。愿你保有这份柔软，也把伞撑向自己；你同样值得被耐心地听完。","postcard":"愿你替人撑伞时，自己的肩头也有晴天。"},"talk":{"title":"坦诚沟通型","subtitle":"从话语的缝隙里，寻找相逢","quote":"一句被好好接住的话，能替漫长的沉默开一扇窗。","strength":"你重视语言的诚意。愿意解释，愿意倾听，也愿意承认同一段往事会留下不同的记忆。","blind":"交谈也需要时机。给沉默一点整理情绪的时间，往往能让下一次开口更接近真正想说的话。","method":"你先寻找对话里的转折：谁终于问出了问题，谁开始倾听，谁肯让另一种记忆进入自己的叙述。","counter":"当彼此记得的过去各有缺口，一场谈话可以先从哪一句真诚的话开始？","question":"如果有一句迟到了很多年的话，你会选择怎样的时刻，让它被好好听见？","identity":"替沉默寻找语言的人","mirror":"你渴望把误会说清，也明白每一次开口都需要勇气。你的坚持里有温度：既允许人保有棱角，也盼望彼此能够相互理解。","evidence":"你关注一句话如何被接住，以及关系如何在倾听中重新流动。","match":"边界自在型","complement":"你为关系寻找开口，对方替每次谈话留出呼吸；语言与分寸同行，坦诚便有了柔软的形状。","friction":"你倾向于尽早澄清，对方更需要酝酿情绪。共同约定交谈的时机，能让双方都保持从容。","verdict":"你相信言语能够渡人。一句被耐心听完的话，或许能让多年沉默有了出口；你也值得遇见一个认真倾听你的人。","postcard":"愿难说的话，都遇见肯等它落地的人。"}};
+const beats=[{"act":"第一幕 · 各有来处","title":"两种认真","scene":"许多年前，阿晚和小满在旧城声音档案项目里成了朋友。阿晚会为录音里三秒杂音反复调试；小满总肯蹲在巷口，等老人把话慢慢说完。雨落下时，她们一人护着设备，一人抱着采访本，常常一起错过末班车。","q":"你觉得，是什么让两个做事方式不同的人，愿意这样并肩？","options":[["她们都肯替微弱的声音停下脚步，认真有了彼此听得懂的回音。",{"care":2,"growth":1},"你关注她们各自认真背后的共同价值。"],["一个守住声音的刻度，一个守住讲述的停顿；差异恰好相成。",{"detail":2,"growth":1},"你愿意把不相同看作彼此的资源。"],["争执到面红耳赤，转身又替她收好耳机；默契里还藏着一点只属于她的偏心。",{"talk":2,"security":1},"你在分歧里看见平等与认真。",{"undertone":"留白的牵挂"}],["她们各有步速，也愿意在某些路口等一等彼此。",{"freedom":2,"security":1},"你先尊重两个人不同的节奏。"]]},{"act":"第一幕 · 各有来处","title":"被保留的停顿","scene":"第一次公开试听前，展板上印着一句漂亮的总结：“旧城处处有人情。”小满望着剪掉的长久沉默，觉得那位老人真正想说的还在那里。阿晚赞同，却又问了一句：“他本人听过这一版吗？”灯已经亮了，她们仍在门口讨论要不要撤片。","q":"她们的坚持各有侧重，哪一层最触动你？","options":[["小满想替那段漫长的停顿留下呼吸，人的一生自有褶皱。",{"care":2,"growth":1},"你看见她对普通人经历的尊重。"],["阿晚把决定权交还讲述者，让善意有了清楚的边界。",{"freedom":2,"detail":1},"你更看重善意落实时的程序与边界。"],["真正的同行者会轻轻追问，替对方照见尚未顾到的角落。",{"talk":2,"growth":1},"你把追问视作合作中的信任。"],["她们一同珍惜的，是人身上复杂又诚实的纹理。",{"detail":2,"care":1},"你注意到了选择背后的伦理立场。"]]},{"act":"第一幕 · 各有来处","title":"两张不同方向的车票","scene":"几年后，阿晚接下北方博物馆的工作，小满决定留在城里筹办书屋。站台起风，小满替阿晚按住差点被吹走的车票，催她别误了车。有人问：“这么好的朋友，你怎么不留她？”小满笑笑：“她有远方，我也有要去的地方。”","q":"你会把这场留出远方的告别，读成什么？","options":[["送别也能是爱惜：她把远方交还给朋友，也把今天留给自己。",{"freedom":2,"care":1},"你相信支持也可以是不占有。"],["她们各自向前，曾同行的那段路便有了两种延长方式。",{"growth":2,"freedom":1},"你看见两段人生同时向前的可能。"],["她替她按住一张车票，像把一句舍不得折进纸角。",{"detail":2,"care":1},"你善于辨认不声张的支持。",{"undertone":"留白的牵挂"}],["那句“我也有要去的地方”，带着一个人终于站稳自己的光。",{"security":1,"freedom":2},"你珍惜关系里完整的自我。"]]},{"act":"第二幕 · 叙述的缺口","title":"小册子的最后一页","scene":"又过几年，一本旧城小册子印了出来。小满发现那段曾约定暂不公开的访谈，竟被收进了正文；阿晚记得自己交出的只是待确认的样稿。编辑的旧邮件缺了附件，最后修改的人也无从查证。小满合上册子，只问：“当初说好的，你还记得吗？”","clue":"档案背面：改版通知只留下前半页。谁知情、谁修改，仍隐没在文件的空白里。缺失的线索静静躺着，等待更完整的证据。","q":"当信任先被伤到、事实却还不完整时，你更在意哪一层？","options":[["伤感先有了容身之处，责任才有机会在更清楚的事实里被看见。",{"care":2,"security":1},"你会先允许人的感受得到承认。"],["每一份公开都有来路，确认与撤回的权利值得被仔细追问。",{"talk":2,"growth":1},"你把责任理解为可被查证的具体过程。"],["两个人都可能真诚，记忆却各自亮着不同的灯。",{"detail":2,"talk":1},"你警惕从单一叙述直接跳到结论。"],["在证据的空白处稍作停留，是对彼此负责的耐心。",{"freedom":2,"security":1},"你珍惜判断尚未成熟时的克制。"]]},{"act":"第二幕 · 叙述的缺口","title":"没有寄出的解释","scene":"争执之后，阿晚曾写下整整两页解释，删到最后只剩一句“我没想让事情变成这样”，仍未发出。小满发来一段语音，背景有电车经过的声音。她说：“我想知道，你那时到底有没有听见我说的话。”阿晚听了很多遍，却一时答不出来。","q":"在这场迟迟展开的对话里，你听见了什么？","options":[["一个等着被相信，一个等着被听见；若牵挂过深，沉默也会带刺。",{"care":2,"talk":1},"你敏感于话语背后彼此不同的需求。",{"undertone":"留白的牵挂"}],["草稿和语音各自留下痕迹，像两个人整理心绪的不同方式。",{"detail":2,"freedom":1},"你会区分真实的情绪与可核对的事实。"],["沉默也有自己的节拍，人有时需要先把自己重新安放。",{"freedom":2,"growth":1},"你愿意承认关系存在暂停的权利。"],["真相与责任像散落的拼图，愿意一起寻找，修复才有落点。",{"talk":2,"security":1},"你相信交流需要可落实的内容。"]]},{"act":"第二幕 · 叙述的缺口","title":"各自仍在生长","scene":"她们渐渐断了联系。阿晚在北方教孩子收录第一场雪落地的声音；小满把书屋开到河边，周末陪老人念完未曾发表的手稿。有人总爱在采访时提起她们的旧事。阿晚把话题带回录音，小满则指着新书架说：“这些也是我一点一点做起来的。”","q":"当别人仍用那场误会概括她们，你更想说什么？","options":[["她们的生命另有章节，那些创作与远行正续写各自的姓名。",{"freedom":2,"growth":1},"你承认关系之外仍有完整的个人生活。"],["从旧伤看向现在，每个人都有值得被单独讲述的日子。",{"care":2,"freedom":1},"你愿意看见痛苦以外的丰富人生。"],["新的作品一件件完成，生命仍有不断向前的能力。",{"growth":2,"security":1},"你把生命的主动性放在关系叙事之前。"],["她们把叙述的主语，从“我们当年”慢慢写回“我”。",{"talk":2,"detail":1},"你注意到讲述权本身也是一种尊严。"]]},{"act":"第三幕 · 重逢的间隙","title":"走廊里的纸箱","scene":"多年后，旧馆迁址，她们因工作再次碰面。阿晚来修复老录音，小满替书屋联系捐赠资料。走廊里，一箱旧磁带突然倾斜；阿晚伸手扶住箱角，小满下意识托住箱底。纸箱稳了，她们也短暂对视，像被同一段往事绊住脚步。","q":"这一下几乎同时发生的动作，你会怎样理解？","options":[["隔了多年，双手仍知道如何接住彼此；一份难以命名的眷恋，或许也留在那一瞬。",{"detail":2,"security":1},"你把默契理解为经验留下的形状。",{"undertone":"留白的牵挂"}],["她们各有可靠的本能，旧日合作的技艺自然浮现。",{"freedom":2,"growth":1},"你读到的是两位可靠的人在工作中自然流露的熟练。"],["一箱旧磁带像一把细小的钥匙，替迟来的谈话开了门。",{"talk":2,"growth":1},"你相信修复常始于具体的共同任务。"],["这一刻的照应已经足够真切，未来仍等着她们自己书写。",{"care":2,"security":1},"你能区分此刻的体贴与未来的关系。"]]},{"act":"第三幕 · 重逢的间隙","title":"拒绝被剪成结局","scene":"展览开幕前，工作人员拟了一句宣传语：“误会消散，旧友终于重归于好。”小满拿起笔，在“终于”下面画了长长一道线：“这些年，我也写下了自己的生活。”阿晚看了看自己的采访，也要求补回一句被截掉的话。海报因此迟迟没有定稿。","clue":"档案背面：两人都希望修改这句宣传语，各有各的理由。相近的选择背后，仍可能藏着不同的记忆。","q":"当她们拒绝一个漂亮的结局时，你更愿意守护什么？","options":[["她们伸手取回讲述权，让人生重新有了属于自己的主语。",{"freedom":2,"talk":1},"你把自我叙述权放在观看者期待之前。"],["伤口曾带来疼痛，往后的成长也值得拥有自己的意义。",{"care":2,"growth":1},"你愿意让一个人的伤口与成长各自拥有完整的意义。"],["她们这些年各自创造的作品，同样值得被认真看见。",{"detail":2,"growth":1},"你倾向于寻找人物完整而多面的生活。"],["观众喜欢团圆，人物更需要按照自己的心意生活。",{"security":1,"freedom":2},"你能为未按期待发展的故事留出位置。"]]},{"act":"第三幕 · 重逢的间隙","title":"歉意与疑问同行","scene":"重新检查母带那天，外面雨声很密。阿晚忽然说：“我当时只顾着解释自己，没看见那件事让你有多难受。”小满的手指停在那本小册子的封底：“我还是想知道，最后那一版是谁确认的。”阿晚把笔记本推到桌子中央：“那就一起找。”","q":"她们仍站在谈话的起点，你怎样理解这份继续？","options":[["先承认痛苦，再一起寻找事实；理解与责任终于并肩坐下。",{"talk":2,"care":1},"你让倾听和求证成为同一张桌上的两件事。"],["小满保留追问的权利，也保留重新靠近的选择。",{"freedom":2,"security":1},"你让原谅保留自己的时序，也看见小满的判断力。"],["阿晚把笔记推向桌心，修复终于从情绪走向行动。",{"growth":2,"talk":1},"你把实际行动视为修复的重要部分。"],["歉意、迟疑和牵挂同时在场，像雨夜里几盏不同亮度的灯。",{"detail":2,"care":1},"你允许复杂情绪并存，而非仓促归类。"]]},{"act":"第四幕 · 人生还有别的章节","title":"那场她没有赴的晚宴","scene":"新馆准备了一场“老搭档重聚”晚宴，小满把那一晚留给了书屋筹备半年的朗读会，一位第一次公开读诗的老人早早坐在第一排。小满忙着搬椅子时，收到阿晚的消息：“今晚有雨，回家带伞。”她回了个“知道啦”，继续调试话筒。","q":"面对小满的选择，你最愿意为她补上一句怎样的理解？","options":[["书屋的灯同样亮着，她今天的生活有自己的分量。",{"freedom":2,"growth":1},"你尊重一个人对当下生活的投入。"],["另一份许诺正在等她，她选择认真地走进那段当下。",{"growth":2,"security":1},"你会从不同责任之间看见一个完整的人。"],["隔着夜雨一句“带伞”，像某种偏心至今仍有余温。",{"care":2,"freedom":1},"你读出了克制里的善意。",{"undertone":"留白的牵挂"}],["看得见的空席之外，她正坐在另一段认真生活的光里。",{"detail":2,"talk":1},"你愿意承认画面之外还有许多未被拍下的生活。"]]},{"act":"第四幕 · 人生还有别的章节","title":"只谈自己的工作","scene":"不久后，阿晚在讲座上谈声音修复。主持人忽然问，她是否愿意讲讲“和旧友冰释前嫌的心得”。她看向投影上那些被抢救回来的录音波形，答道：“今天我想先让这些声音被听见。”散场后，有人称她回避，有人说她终于学会替自己设限。","clue":"档案背面：讲座结束后，阿晚留下一份给学校的录音设备清单。那是她多年坚持的教学项目，每一份心血都自有来处。","q":"阿晚把讲座交还自己的工作，你会怎样理解？","options":[["她让自己的声音回到讲台中央，讲述的次序握在她手中。",{"freedom":2,"talk":1},"你看见一个人守护叙述边界的权利。"],["多年磨出的专业能力，足以撑起她故事的这一章。",{"growth":2,"security":1},"你认可她从自身实践里获得的价值。"],["自我保护与尚待抚平的伤常常相邻，局外人只看到其中一面。",{"detail":2,"care":1},"你能承认旁观信息的不足。"],["她心里或许留着旧友的位置，嘴上仍愿谈此刻的作品。",{"care":2,"freedom":1},"你允许一个人既柔软，也坚定。"]]},{"act":"第四幕 · 人生还有别的章节","title":"没有必须写下的结局","scene":"秋天的新馆门口，风翻动一本展册。阿晚问：“明年新展的声音，你还愿意来听吗？”小满望了望手机里书屋的安排，说：“也许。等我先把自己的事忙完。”阿晚点头：“好，等你决定。”她们隔着秋风点头道别，重逢便停在这一页。","q":"如果故事停在这里，你最愿意留下怎样的一句注脚？","options":[["明日仍有留白，友情便能在各自的生活中自然生长。",{"freedom":2,"security":1},"你允许关系按自己的节奏存在。"],["她们各自站稳人生的脚跟，下一段同行才更自由。",{"growth":2,"freedom":1},"你看见独立与陪伴之间流动的余地。"],["“等你决定”说得极轻，像一封肯为回信等上许久的信。",{"care":2,"talk":1},"你珍惜关系中仍然存在的耐心。",{"undertone":"留白的牵挂"}],["最动人的结尾留着分岔，容许旧记忆与新可能一起发芽。",{"talk":2,"detail":1},"你更在意一个开放而诚实的结尾。"]]}];
+const state={index:0,answers:{},opened:{},revised:{},results:null};
+const STORAGE="emotion_observatory_v6_session";
+const $=id=>document.getElementById(id);
+function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active",s.id===id));document.body.classList.toggle("play-mode",id==="play");window.scrollTo({top:0,behavior:"smooth"})}
+let toastTimer;
+function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2400)}
+function save(){try{sessionStorage.setItem(STORAGE,JSON.stringify({index:state.index,answers:state.answers,opened:state.opened,revised:state.revised}));}catch(e){}}
+function load(){if(new URLSearchParams(location.search).get("play")==="1")return;try{const v=JSON.parse(sessionStorage.getItem(STORAGE)||"null");if(v){state.index=Number.isInteger(v.index)?Math.max(0,Math.min(beats.length-1,v.index)):0;state.answers=v.answers||{};state.opened=v.opened||{};state.revised=v.revised||{}}}catch(e){}}
+function render(){
+ const b=beats[state.index],answer=state.answers[state.index];
+ $("counter").textContent=String(state.index+1).padStart(2,"0")+" / 12";
+ $("progress").style.width=`${(state.index+1)/12*100}%`;
+ $("sceneNo").textContent="CASE NOTE / "+String(state.index+1).padStart(2,"0")+" · "+(["昔日同行","裂缝渐生","多年重逢","各自人生"][Math.floor(state.index/3)]);
+ $("sceneText").textContent=b.scene;
+ $("qLabel").className="question-label";
+ $("qLabel").textContent="◈ 观察室嘉宾笔记";
+ $("qTitle").textContent=b.q;
+ const opts=$("options");opts.innerHTML="";
+ b.options.forEach((option,i)=>{
+  const btn=document.createElement("button");btn.type="button";btn.className="option";
+  btn.setAttribute("aria-pressed",answer===i?"true":"false");
+  const mark=document.createElement("span");mark.className="letter";mark.textContent=String.fromCharCode(65+i);
+  const label=document.createElement("span");label.textContent=option[0];
+  btn.append(mark,label);
+  btn.onclick=()=>{
+   const previous=state.answers[state.index];
+   if(Number.isInteger(previous)&&previous!==i)state.revised[state.index]=true;
+   state.answers[state.index]=i;save();renderChoice();
+  };
+  opts.appendChild(btn);
+ });
+ renderChoice();
+ const mount=$("clueSlot");mount.innerHTML="";
+ if(b.clue){
+  const area=document.createElement("div");area.className="clue compact-clue";
+  const bttn=document.createElement("button");bttn.className="clue-btn";
+  bttn.textContent=state.opened[state.index]?"◌ 再看一眼补充线索":"◌ 翻开卡片背面";
+  bttn.onclick=()=>{
+    state.opened[state.index]=true;save();
+    $("clueModalText").textContent=b.clue;
+    $("clueOverlay").hidden=false;
+  };
+  area.appendChild(bttn);mount.appendChild(area);
+ }
+ $("prevBtn").disabled=state.index===0;
+ $("pageNo").textContent=state.index+1+" / 12";
+ $("nextBtn").textContent=state.index===beats.length-1?"生成观察报告 →":"下一条线索 →";
+ save();
+}
+function renderChoice(){
+ const answer=state.answers[state.index],b=beats[state.index];
+ document.querySelectorAll("#options .option").forEach((node,i)=>node.setAttribute("aria-pressed",answer===i?"true":"false"));
+ const box=$("interpretation");
+ if(Number.isInteger(answer)){box.textContent=b.options[answer][2];box.classList.add("visible")}
+ else{box.textContent="";box.classList.remove("visible")}
+}
+function calc(){
+ const totals={security:0,freedom:0,detail:0,growth:0,care:0,talk:0};
+ const latest={security:-1,freedom:-1,detail:-1,growth:-1,care:-1,talk:-1};
+ beats.forEach((b,i)=>{
+  const choice=state.answers[i];
+  if(!Number.isInteger(choice))return;
+  for(const [k,v] of Object.entries(b.options[choice][1])){
+    totals[k]+=v;
+    latest[k]=i;
+  }
+ });
+ // Normalize by how often each interpretation lens is offered by the question bank.
+ // This prevents the story's emphasis on autonomy from predetermining the final type.
+ const opportunity={security:0,freedom:0,detail:0,growth:0,care:0,talk:0};
+ for(const b of beats){
+   for(const o of b.options){
+     for(const [k,v] of Object.entries(o[1])) opportunity[k]+=v/b.options.length;
+   }
+ }
+ const adjusted={};Object.keys(totals).forEach(k=>adjusted[k]=opportunity[k]?totals[k]/opportunity[k]:0);
+ const keys=Object.keys(adjusted).sort((a,b)=>adjusted[b]-adjusted[a]||latest[b]-latest[a]);
+ const total=Object.values(adjusted).reduce((a,b)=>a+b,0)||1;
+ const shares={};keys.forEach(k=>shares[k]=Math.round(adjusted[k]/total*100));
+ const opened=Object.keys(state.opened).filter(k=>state.opened[k]).length;
+ const revised=Object.keys(state.revised).filter(k=>state.revised[k]).length;
+ const score=Math.min(100,72+opened*7+Math.min(2,revised)*5);
+ const rank=score>=93?"Lv.5 多面观察员":score>=83?"Lv.4 细节捕手":"Lv.3 关系旁观者";
+ const reading=keys[0]==="detail"?"私人历史的阅读者":keys[0]==="care"?"情绪复杂性的守护者":keys[0]==="freedom"?"边界与自我的观察者":keys[0]==="talk"?"未尽之言的倾听者":keys[0]==="growth"?"时间与变化的同行者":"稳定与承诺的见证者";
+ return {totals,keys,shares,rank,score,opened,revised,reading,main:keys[0],second:keys[1]};
+}
+function displayResult(){
+ const r=state.results=calc(),p=lenses[r.main],s=lenses[r.second];
+ const keyLabels={security:"在场与承诺",freedom:"边界与自主",detail:"细节与记忆",growth:"时间与变化",care:"情绪与照料",talk:"叙述与沟通"};
+ const awNotes=[
+  "阿晚把专业与往事并排放好。旧友仍值得珍惜，多年磨出的手艺也值得站在光里。",
+  "在你眼里，阿晚的心力藏在一卷卷录音里。那些作品让她成为今天的她，也让她的故事拥有更宽阔的空间。",
+  "阿晚的沉默有好几层：保护、迟疑，以及仍待安放的情绪。你允许这些可能性在她身上同时存在。",
+  "她心里可以留下旧友的位置，也可以把话题交还手头的作品。温柔与分寸，在同一个人身上并行。"
+ ];
+ const xmNotes=[
+  "你看见小满把书屋的灯一盏盏亮起来。旧友仍值得珍惜，今日的生活也在等待她亲自到场。",
+  "她赶往朗读会，守住了对每位读者的承诺。你读到了关系之外、同样郑重的一份责任。",
+  "一条消息让阿晚的关切落在夜雨里，小满的回应则停在手头的生活。你欣赏这份有来有往的分寸。",
+  "你把她的缺席放回整个夜晚：朗读会、第一次上台的老人、急着调好的话筒。她有自己正在投入的世界。"
+ ];
+ const awIndex=Number.isInteger(state.answers[10])?state.answers[10]:0;
+ const xmIndex=Number.isInteger(state.answers[9])?state.answers[9]:0;
+ const exampleIndex=7;
+ const exampleChoice=Number.isInteger(state.answers[exampleIndex])?state.answers[exampleIndex]:0;
+ const example=beats[exampleIndex].options[exampleChoice];
+ const undertoneCount=beats.reduce((count,b,i)=>{
+   const a=state.answers[i];
+   return count+(Number.isInteger(a)&&b.options[a]&&b.options[a][3]&&b.options[a][3].undertone?1:0);
+ },0);
+ const undertone=undertoneCount>=3
+   ?"在你的选择里，友情与未署名的眷恋偶尔落在同一束光下。有人从中读见默契，有人听见更细微的心跳；你愿意把答案暂时交给风。"
+   :undertoneCount>=1
+   ?"你的目光偶尔停在友情边缘那点微妙的温度上。一个回头、一句旧约，都可能让熟悉生出新的层次。"
+   :"你的目光更常沿着行动、边界与时间前行。那些留白安静地留在故事里，等待下一位观察者写下自己的注脚。";
+ const duality="你总能同时持有两种目光：一束照向"+keyLabels[r.main]+"，一束照向"+keyLabels[r.second]+"。它们交错着，使你的情感世界生出丰沛的层次。";
+ $("report").innerHTML=`
+ <div class="result-head">
+  <div class="eyebrow">YOUR OBSERVER TITLE</div><h2>${r.rank}</h2>
+  <div><strong>${r.reading}</strong></div>
+  <p>探索指数 ${r.score}/100 · 数字记录你翻阅线索、调整观点的足迹。</p>
+ </div>
+ <div class="report-block">
+  <div class="label">TWO WHOLE PERSONS · 她们各自有完整的人生</div>
+  <h3>你怎样看见她们？</h3>
+  <div class="portrait-pair">
+    <div class="portrait-note"><div class="portrait-head"><span class="portrait-initial">晚</span><b>阿晚｜有自己的声音</b></div><p>${awNotes[awIndex]}</p></div>
+    <div class="portrait-note"><div class="portrait-head"><span class="portrait-initial">满</span><b>小满｜有自己的远方</b></div><p>${xmNotes[xmIndex]}</p></div>
+  </div>
+  <p class="small">人物画像由你在第 10、11 题的选择延伸而来。每一种读法，都为她们的复杂留下一点空间。</p>
+ </div>
+ <div class="report-block">
+  <div class="label">YOUR OWN COMPLEXITY · 你的情感光谱</div>
+  <h3>${p.title} <small style="font-size:13px;color:#987789;font-family:system-ui;font-weight:400">× ${s.title}</small></h3>
+  <div class="result-quote">“${p.quote}”</div>
+  <p class="muted"><b>${p.identity}。</b> ${p.mirror}</p>
+  <p class="muted">${duality}</p>
+ </div>
+ <div class="report-cols">
+  <div class="report-block">
+   <div class="label">HOW YOU READ · 目光与回声</div><h3>一束目光，也有自己的明暗</h3>
+   <div class="insight-item"><b>01｜你最先注意到</b><p>${p.method}</p></div>
+   <div class="insight-item"><b>02｜你独有的感受力</b><p>${p.strength}</p></div>
+   <div class="insight-item"><b>03｜另一种可能的角度</b><p>${p.blind}</p></div>
+   <div class="insight-item"><b>04｜留给你的反问</b><p>${p.counter}</p></div>
+  </div>
+  <div class="report-block">
+   <div class="label">YOUR READING MAP · 六种观察尺度</div><h3>你的目光最常落在哪里？</h3>
+   ${r.keys.map(k=>`<div class="meter"><span>${keyLabels[k]}</span><b>${r.shares[k]}%</b></div><div class="fill"><i style="width:${Math.min(100,r.shares[k]*2.5)}%"></i></div>`).join("")}
+   <p class="small">占比根据 12 道题的选项权重进行平衡，呈现本次故事里你的阅读侧重点。</p>
+  </div>
+ </div>
+ <div class="report-block">
+  <div class="label">BETWEEN THE LINES · 友情与心事的留白</div>
+  <h3>那些尚未命名的情绪</h3>
+  <p class="muted">${undertone}</p>
+ </div>
+ <div class="report-block">
+   <div class="label">WHY THIS RESULT · 一道题留下的纹路</div>
+   <h3>你曾这样理解她们</h3>
+   <p class="muted">在第 8 题，你选择了：<b>「${example[0]}」</b></p>
+   <div class="result-quote" style="font-size:18px">“${example[2]}”</div>
+   <p class="muted">这一刻的选择，像书页上一处折角。再读一次，也许又会看见另一个角度。</p>
+ </div>
+ <div class="report-block">
+   <div class="label">PERSPECTIVE MATCH · 观点的相逢</div><h3>谁与你共鸣，谁让你看见更多？</h3>
+   <div class="matchline"><b>同频观察者｜${p.title}</b><div>你们常为相近的细节停步，容易读懂彼此心里的回响；共同的偏爱，也值得偶尔换一束光照照。</div></div>
+   <div class="matchline"><b>互补观察者｜${p.match}</b><div>${p.complement}</div></div>
+   <div class="matchline"><b>相遇时的磨合｜各自的解释尺度</b><div>${p.friction}</div></div>
+   <p class="small">这里写下的是观点之间的共鸣与张力，留给真实的人际交往一片开放的空间。</p>
+ </div>
+ <div class="report-block">
+  <div class="label">A QUESTION TO KEEP · 留给你的一句话</div>
+  <div class="result-quote">“${p.question}”</div>
+ </div>
+ <div class="report-block final-verdict">
+  <div class="label">THE LAST PAGE · 你的观察室判词</div>
+  <h3>${r.reading}</h3>
+  <div class="result-quote">“${p.verdict}”</div>
+  <p class="muted">十二次观察，如同十二次照面。你看见她们各自的风雨，也照见自己心里的辽阔。</p>
+ </div>`;
+ drawPoster(r);
+}
+function rr(ctx,x,y,w,h,r,fill){ctx.beginPath();ctx.moveTo(x+r,y);ctx.lineTo(x+w-r,y);ctx.quadraticCurveTo(x+w,y,x+w,y+r);ctx.lineTo(x+w,y+h-r);ctx.quadraticCurveTo(x+w,y+h,x+w-r,y+h);ctx.lineTo(x+r,y+h);ctx.quadraticCurveTo(x,y+h,x,y+h-r);ctx.lineTo(x,y+r);ctx.quadraticCurveTo(x,y,x+r,y);ctx.closePath();ctx.fillStyle=fill;ctx.fill()}
+function write(ctx,text,x,y,font,color,align="left"){ctx.textAlign=align;ctx.font=font;ctx.fillStyle=color;ctx.fillText(text,x,y)}
+function wrapText(ctx,s,x,y,maxWidth,lineHeight,font,color){
+ ctx.font=font;ctx.textAlign="left";ctx.fillStyle=color;let line="",row=0;
+ for(const char of Array.from(s)){
+  if(line&&ctx.measureText(line+char).width>maxWidth){ctx.fillText(line,x,y+row*lineHeight);row++;line=char}else line+=char;
+ }
+ if(line)ctx.fillText(line,x,y+row*lineHeight);
+ return y+(row+1)*lineHeight;
+}
+function drawPoster(r){
+ const canvas=$("posterCanvas"),ctx=canvas.getContext("2d");if(!ctx)return;
+ const W=1080,H=1440;
+ const gradient=ctx.createLinearGradient(0,0,W,H);gradient.addColorStop(0,"#f9f1ea");gradient.addColorStop(.5,"#fff9f3");gradient.addColorStop(1,"#f0dce2");ctx.fillStyle=gradient;ctx.fillRect(0,0,W,H);
+ ctx.fillStyle="#ebcbd5";ctx.beginPath();ctx.arc(940,125,260,0,Math.PI*2);ctx.fill();
+ rr(ctx,70,65,940,1308,40,"#fffcf8");
+ ctx.strokeStyle="#e7d4d8";ctx.lineWidth=2;ctx.strokeRect(106,112,866,1205);
+ write(ctx,"情 感 观 察 室",139,184,'bold 32px "PingFang SC",sans-serif',"#7b3d58");
+ write(ctx,"RELATIONSHIP OBSERVATORY   /   VOL. 001",943,185,'bold 16px Arial',"#a86e82","right");
+ rr(ctx,139,238,802,4,2,"#ead9dc");
+ write(ctx,"HOW YOU READ PEOPLE",144,306,'bold 19px Arial',"#af7a8e");
+ write(ctx,r.rank,145,390,'bold 57px "Songti SC",serif',"#753c55");
+ write(ctx,r.reading,145,466,'bold 35px "Songti SC",serif',"#a45977");
+ rr(ctx,139,503,802,312,24,"#f7ebee");
+ write(ctx,"你 的 情 感 观 察 视 角",168,560,'bold 22px "PingFang SC",sans-serif',"#965772");
+ write(ctx,lenses[r.main].title,168,626,'bold 45px "Songti SC",serif',"#793c56");
+ write(ctx,"副类型  "+lenses[r.second].title,169,682,'23px "PingFang SC",sans-serif',"#a57485");
+ wrapText(ctx,lenses[r.main].quote,168,747,720,44,'28px "Songti SC",serif',"#805b6b");
+ write(ctx,"你 最 关 注 的 三 个 线 索",147,886,'bold 22px "PingFang SC",sans-serif',"#86556b");
+ r.keys.slice(0,3).forEach((k,i)=>{
+  const x=145+i*267;rr(ctx,x,910,242,70,33,"#f3e4e8");
+  write(ctx,({security:"陪伴",freedom:"边界",detail:"细节",growth:"长期",care:"照顾",talk:"沟通"})[k],x+121,954,'bold 27px "PingFang SC",sans-serif',"#8c4f69","center");
+ });
+ write(ctx,"给 另 一 位 观 察 室 嘉 宾",146,1074,'bold 20px "PingFang SC",sans-serif',"#a76c82");
+ wrapText(ctx,lenses[r.main].postcard,145,1123,800,47,'28px "Songti SC",serif',"#705465");
+ rr(ctx,135,1245,810,75,20,"#854762");
+ write(ctx,"每一个灵魂，都值得被细细阅读。",540,1293,'bold 27px "PingFang SC",sans-serif',"#fffaf7","center");
+ $("posterPreview").src=canvas.toDataURL("image/png");
+}
+function inviteLink(){
+ if(!/^https?:$/.test(location.protocol)||["localhost","127.0.0.1","0.0.0.0"].includes(location.hostname))return null;
+ const u=new URL(location.href);u.search="?play=1";u.hash="";return u.href;
+}
+function isWeChatBrowser(){
+ return /MicroMessenger/i.test(navigator.userAgent);
+}
+function renderShare(){
+ if(!state.results)displayResult();
+ const u=inviteLink();
+ const wx=isWeChatBrowser();
+ $("linkbox").textContent=u?"好友直达测评："+u:"当前为本地 HTML 预览，还没有公网邀请地址。上传到 HTTPS 静态网站后，这里会自动生成可以直接开始答题的链接。";
+ $("shareBtn").textContent=wx?"微信内分享指引（···）":"↗ 系统分享测评链接";
+ $("wxInline").hidden=!wx;
+ $("shareExplain").textContent=wx
+   ?"微信内置浏览器通常通过右上角菜单转发网页；如果想把结果图片也发出去，请先下载 PNG 后再单独发送。"
+   :"系统分享菜单会列出手机与浏览器支持的 App；也可以复制测评链接，直接粘贴到微信聊天。";
+ show("share");
+}
+function shareText(){return `我在《情感观察室》读到了「${state.results.reading}」。我的观察视角是「${lenses[state.results.main].title}」。十二个片段，你会为哪一句未尽之言停留？`}
+async function copyText(s){
+ try{await navigator.clipboard.writeText(s);return true}
+ catch(e){try{const el=document.createElement("textarea");el.value=s;el.style.position="fixed";el.style.opacity="0";document.body.appendChild(el);el.select();const ok=document.execCommand("copy");el.remove();return ok}catch(_){return false}}
+}
+async function shareNow(){
+ const link=inviteLink(),phrase=shareText();
+ if(isWeChatBrowser()){
+  $("wxOverlay").hidden=false;
+  return;
+ }
+ // 优先分享测评 URL；文件与网址同时分享时，部分系统可能只转发图片。
+ if(navigator.share&&link){
+  try{
+   await navigator.share({title:"情感观察室",text:phrase,url:link});
+   return;
+  }catch(e){if(e.name==="AbortError")return}
+ }
+ if(link){toast(await copyText(phrase+"\n"+link)?"已复制介绍与测评链接，打开微信粘贴发送即可":"当前无法复制，请使用下方链接按钮")}
+ else toast("结果卡可以保存；要分享可访问的链接，需要先将网页部署到公网。");
+}
+function download(){const a=document.createElement("a");a.href=$("posterCanvas").toDataURL("image/png");a.download="情感观察室_我的结果卡.png";document.body.appendChild(a);a.click();a.remove();toast("结果卡已生成，浏览器正在保存 PNG。")}
+function reset(toPlay=false){state.index=0;state.answers={};state.opened={};state.revised={};state.results=null;save();render();show(toPlay?"play":"home")}
+$("startBtn").onclick=()=>{render();show("play")};
+
+$("homeBtn").onclick=()=>show("home");
+$("resetBtn").onclick=()=>{if(confirm("重新开始会清除本次答案，确定吗？"))reset()};
+$("prevBtn").onclick=()=>{if(state.index>0){state.index--;render();window.scrollTo({top:0,behavior:"smooth"})}};
+$("nextBtn").onclick=()=>{
+ if(!Number.isInteger(state.answers[state.index])){toast("先选择你的解读，再翻到下一页。");return}
+ if(state.index<beats.length-1){state.index++;render();window.scrollTo({top:0,behavior:"smooth"})}
+ else{displayResult();show("result")}
+};
+$("sharePageBtn").onclick=renderShare;
+$("resultRestartBtn").onclick=()=>{if(confirm("要清除本次答案，重新观察吗？"))reset(true)};
+$("backResultBtn").onclick=()=>show("result");
+$("savePosterBtn").onclick=download;
+$("shareBtn").onclick=shareNow;
+$("clueCloseBtn").onclick=()=>$("clueOverlay").hidden=true;
+$("clueOverlay").onclick=e=>{if(e.target===$("clueOverlay"))$("clueOverlay").hidden=true};
+$("wxCloseBtn").onclick=()=>$("wxOverlay").hidden=true;
+$("wxOverlay").onclick=e=>{if(e.target===$("wxOverlay"))$("wxOverlay").hidden=true};
+$("copyLinkBtn").onclick=async()=>{const u=inviteLink();if(!u){toast("本地文件还没有可供好友访问的地址，请先部署网站。");return}toast(await copyText(u)?"好友测评链接已复制":"复制失败，请手动复制地址")};
+load();render();
+if(new URLSearchParams(location.search).get("play")==="1")reset(true);
+</script>
+</body>
+</html>
