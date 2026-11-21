@@ -395,6 +395,16 @@ body.large-type #play .question-label{font-size:12.5px!important}
   body.play-mode #play .actions{padding-top:6px;padding-bottom:3px}
 }
 </style>
+<!-- Baidu Tongji: page visits, loaded asynchronously (site ID from user's screenshot). -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?f5bce0f3c33c394fac05058d29dece76";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 </head>
 <body>
 <div class="app">
@@ -479,7 +489,7 @@ body.large-type #play .question-label{font-size:12.5px!important}
     </div>
   </section>
 </main>
-<footer>情感观察室 · 关于友情、界限与完整自我的关系观察小游戏<br>角色与情节均为虚构。观察结果是一种文学化的阅读画像，留给真实的你继续书写。</footer>
+<footer>情感观察室 · 关于友情、界限与完整自我的关系观察小游戏<br>角色与情节均为虚构。观察结果是一种文学化的阅读画像，留给真实的你继续书写。<br><span style="font-size:11px">使用百度统计分析访问量、答题进度、结果类别与分享按钮点击；不会主动上传姓名和各题具体选项。第三方统计服务可能处理访问设备和网络信息。</span></footer>
 </div>
 <canvas id="posterCanvas" width="1080" height="1440" hidden></canvas>
 
@@ -513,6 +523,37 @@ const beats=[{"act":"第一幕 · 各有来处","title":"两种认真","scene":"
 const state={index:0,answers:{},opened:{},revised:{},results:null};
 const STORAGE="emotion_observatory_v6_session";
 const $=id=>document.getElementById(id);
+/* baidu-event-metrics v6.4
+   Baidu's asynchronous tracker creates the window._hmt queue on page load.
+   Only aggregate action names, question numbers, and category codes are sent.
+   No names, individual choices, free text, or raw result narratives. */
+const METRIC_KEY="emotion_observatory_v64_metrics_seen";
+let metricSeen=new Set();
+try{
+ const v=JSON.parse(sessionStorage.getItem(METRIC_KEY)||"[]");
+ if(Array.isArray(v))metricSeen=new Set(v.filter(x=>typeof x==="string"));
+}catch(e){}
+function trackEvent(action,label=""){
+ try{
+  if(!Array.isArray(window._hmt))return;
+  window._hmt.push(["_trackEvent","情感观察室",action,String(label)]);
+ }catch(e){}
+}
+function trackOnce(action,label=""){
+ const id=action+"|"+label;
+ if(metricSeen.has(id))return;
+ metricSeen.add(id);
+ try{sessionStorage.setItem(METRIC_KEY,JSON.stringify([...metricSeen]))}catch(e){}
+ trackEvent(action,label);
+}
+function clearMetricsRun(){
+ metricSeen.clear();
+ try{sessionStorage.removeItem(METRIC_KEY)}catch(e){}
+}
+function markQuestionCompleted(i){
+ trackOnce("question_complete","Q"+String(i+1).padStart(2,"0"));
+}
+
 function show(id){document.querySelectorAll(".screen").forEach(s=>s.classList.toggle("active",s.id===id));document.body.classList.toggle("play-mode",id==="play");window.scrollTo({top:0,behavior:"smooth"})}
 let toastTimer;
 function toast(m){const t=$("toast");t.textContent=m;t.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove("show"),2400)}
@@ -551,6 +592,7 @@ function render(){
   bttn.textContent=state.opened[state.index]?"◌ 再看一眼补充线索":"◌ 翻开卡片背面";
   bttn.onclick=()=>{
     state.opened[state.index]=true;save();
+    trackOnce("clue_open","Q"+String(state.index+1).padStart(2,"0"));
     $("clueModalText").textContent=b.clue;
     $("clueOverlay").hidden=false;
   };
@@ -742,6 +784,7 @@ function isWeChatBrowser(){
  return /MicroMessenger/i.test(navigator.userAgent);
 }
 function renderShare(){
+ trackEvent("share_page_open","result_card");
  if(!state.results)displayResult();
  const u=inviteLink();
  const wx=isWeChatBrowser();
@@ -759,6 +802,7 @@ async function copyText(s){
  catch(e){try{const el=document.createElement("textarea");el.value=s;el.style.position="fixed";el.style.opacity="0";document.body.appendChild(el);el.select();const ok=document.execCommand("copy");el.remove();return ok}catch(_){return false}}
 }
 async function shareNow(){
+ trackEvent("share_button_click","system_or_wechat");
  const link=inviteLink(),phrase=shareText();
  if(isWeChatBrowser()){
   $("wxOverlay").hidden=false;
@@ -774,9 +818,17 @@ async function shareNow(){
  if(link){toast(await copyText(phrase+"\n"+link)?"已复制介绍与测评链接，打开微信粘贴发送即可":"当前无法复制，请使用下方链接按钮")}
  else toast("结果卡可以保存；要分享可访问的链接，需要先将网页部署到公网。");
 }
-function download(){const a=document.createElement("a");a.href=$("posterCanvas").toDataURL("image/png");a.download="情感观察室_我的结果卡.png";document.body.appendChild(a);a.click();a.remove();toast("结果卡已生成，浏览器正在保存 PNG。")}
-function reset(toPlay=false){state.index=0;state.answers={};state.opened={};state.revised={};state.results=null;save();render();show(toPlay?"play":"home")}
-$("startBtn").onclick=()=>{render();show("play")};
+function download(){trackEvent("poster_download_click","png");const a=document.createElement("a");a.href=$("posterCanvas").toDataURL("image/png");a.download="情感观察室_我的结果卡.png";document.body.appendChild(a);a.click();a.remove();toast("结果卡已生成，浏览器正在保存 PNG。")}
+function reset(toPlay=false){
+ state.index=0;state.answers={};state.opened={};state.revised={};state.results=null;
+ clearMetricsRun();
+ save();render();show(toPlay?"play":"home");
+ if(toPlay)trackOnce("game_start","replay_or_invitation");
+}
+$("startBtn").onclick=()=>{
+ render();show("play");
+ trackOnce("game_start","home");
+};
 
 const fontBtn=$("fontBtn");
 function setLargeType(enabled){
@@ -794,8 +846,18 @@ $("resetBtn").onclick=()=>{if(confirm("重新开始会清除本次答案，确�
 $("prevBtn").onclick=()=>{if(state.index>0){state.index--;render();window.scrollTo({top:0,behavior:"smooth"})}};
 $("nextBtn").onclick=()=>{
  if(!Number.isInteger(state.answers[state.index])){toast("先选择你的解读，再翻到下一页。");return}
- if(state.index<beats.length-1){state.index++;render();window.scrollTo({top:0,behavior:"smooth"})}
- else{displayResult();show("result")}
+ markQuestionCompleted(state.index);
+ if(state.index<beats.length-1){
+  state.index++;render();window.scrollTo({top:0,behavior:"smooth"});
+ }else{
+  displayResult();
+  trackOnce("game_complete","Q12");
+  if(state.results){
+   trackOnce("result_type",state.results.main);
+   trackOnce("result_subtype",state.results.second);
+  }
+  show("result");
+ }
 };
 $("sharePageBtn").onclick=renderShare;
 $("resultRestartBtn").onclick=()=>{if(confirm("要清除本次答案，重新观察吗？"))reset(true)};
@@ -806,10 +868,15 @@ $("clueCloseBtn").onclick=()=>$("clueOverlay").hidden=true;
 $("clueOverlay").onclick=e=>{if(e.target===$("clueOverlay"))$("clueOverlay").hidden=true};
 $("wxCloseBtn").onclick=()=>$("wxOverlay").hidden=true;
 $("wxOverlay").onclick=e=>{if(e.target===$("wxOverlay"))$("wxOverlay").hidden=true};
-$("copyLinkBtn").onclick=async()=>{const u=inviteLink();if(!u){toast("本地文件还没有可供好友访问的地址，请先部署网站。");return}toast(await copyText(u)?"好友测评链接已复制":"复制失败，请手动复制地址")};
+$("copyLinkBtn").onclick=async()=>{
+ const u=inviteLink();
+ if(!u){toast("本地文件还没有可供好友访问的地址，请先部署网站。");return}
+ const copied=await copyText(u);
+ if(copied)trackEvent("invite_link_copied","friend_start_link");
+ toast(copied?"好友测评链接已复制":"复制失败，请手动复制地址");
+};
 load();render();
 if(new URLSearchParams(location.search).get("play")==="1")reset(true);
 </script>
-<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
